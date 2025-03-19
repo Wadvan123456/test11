@@ -37,7 +37,10 @@ try {
                 $stmt->bindParam(':MaSV', $maSV);
                 $stmt->bindParam(':MaHP', $maHP);
                 $stmt->execute();
-                $message = "✅ Đăng ký thành công!";
+
+                // Chuyển hướng về trang danh sách
+                header("Location: danhsach.php");
+                exit; // Dừng xử lý sau khi chuyển hướng
             }
         } else {
             $message = "⚠️ Vui lòng chọn sinh viên và học phần!";
@@ -85,7 +88,7 @@ try {
                 </select>
             </div>
             <button type="submit" class="btn btn-primary w-100">Đăng Ký</button>
-            <a href="index.php" class="btn btn-secondary w-100 mt-2">Trở Về</a>
+            <a href="sinhvien.php" class="btn btn-secondary w-100 mt-2">Trở Về</a>
         </form>
     </div>
 </body>
